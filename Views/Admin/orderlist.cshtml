@@ -1,0 +1,44 @@
+﻿@model  List<WebApplication1.Models.tbl_invoice>
+@{
+    ViewBag.Title = "orderlist";
+    Layout = "~/Views/Shared/_Layout3.cshtml";
+}
+
+<h2>orderlist</h2>
+
+<table class="table table-striped table-hover">
+
+    <thead>
+        <tr>
+            <th>Invoice Id</th>
+            <th>Buyer Id</th>
+            <th>Buying Date</th>
+            <th>Total Price</th>
+
+        </tr>
+
+    </thead>
+    <tbody>
+
+        @foreach (var us in Model)
+        {
+            <tr>
+                <td>@us.in_id</td>
+                <td>@us.in_fk_user</td>
+                <td> @us.in_date</td>
+                <td> @us.in_totalbill</td>
+
+
+
+            </tr>
+        }
+
+
+
+    </tbody>
+
+
+
+
+</table>
+

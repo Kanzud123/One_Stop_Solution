@@ -1,0 +1,19 @@
+﻿@model  List<WebApplication1.Models.tbl_product>
+@{
+    ViewBag.Title = "Details";
+    Layout = null;
+}
+
+
+
+<h2>Product Details</h2>
+
+@foreach (var us2 in Model)
+{
+    <img src="@Url.Content(us2.pro_image)" alt="John" style="width:50%">
+    <dt>Product Name:@us2.pro_name</dt>
+    <dt>Product Price:@us2.pro_price</dt>
+    <dt>Product Description:@us2.pro_des</dt>
+
+
+}

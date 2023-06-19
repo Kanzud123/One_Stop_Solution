@@ -1,0 +1,95 @@
+﻿@model WebApplication1.Models.tbl_product
+@{
+    Layout = null;
+    ViewBag.Title = "EditAd";
+}
+
+
+
+
+<div class="w3-container" style="padding-left:60px">
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(m => m.pro_id)
+
+        <div class="form-horizontal">
+            <h2>EditAd</h2>
+            <hr />
+
+            <p>Product name</p>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.pro_name, new { htmlAttributes = new { @class = "form-control" } })
+
+            </div>
+        </div>
+
+
+        <div class="form-horizontal">
+
+            <hr />
+
+            <p>Product Price</p>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.pro_price, new { htmlAttributes = new { @class = "form-control" } })
+
+            </div>
+        </div>
+
+
+        <div class="form-horizontal">
+
+            <hr />
+
+            <p>Product Description</p>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.pro_des, new { htmlAttributes = new { @class = "form-control" } })
+
+            </div>
+        </div>
+
+
+        <div class="form-horizontal">
+
+            <hr />
+
+            <p>Product Image</p>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.pro_image, new { htmlAttributes = new { @class = "form-control" } })
+
+            </div>
+        </div>
+
+        <div class="form-horizontal">
+
+            <hr />
+
+            <p>Product Category</p>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.pro_fk_cat, new { htmlAttributes = new { @class = "form-control" } })
+
+            </div>
+        </div>
+
+        <div class="form-horizontal">
+
+            <hr />
+
+            <p>Products Owwner</p>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.pro_fk_user, new { htmlAttributes = new { @class = "form-control" } })
+
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Submit" class="btn btn-success" />
+            </div>
+        </div>
+    }
+
+</div>

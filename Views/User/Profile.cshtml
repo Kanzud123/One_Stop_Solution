@@ -1,0 +1,25 @@
+﻿@model  List<WebApplication1.Models.tbl_user>
+@{
+    ViewBag.Title = "Profile";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+
+
+<h2>My Profile</h2>
+
+    @foreach (var us2 in Model)
+    {
+        <img src="@Url.Content(us2.u_image)" alt="John" style="width:50%">
+        <dt>Name:@us2.u_name</dt>
+        <dt>Email:@us2.u_email</dt>
+        <dt>Password:@us2.u_password</dt>
+        <dt>Contact Number:@us2.u_contact</dt>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = us2.u_id }) |
+
+
+            @Html.ActionLink("Delete My Account", "Delete", new { id = us2.u_id })
+        </td>
+    }
+

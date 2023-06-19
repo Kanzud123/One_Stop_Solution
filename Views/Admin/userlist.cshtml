@@ -1,0 +1,45 @@
+﻿@model  List<WebApplication1.Models.tbl_user>
+@{
+    ViewBag.Title = "userlist";
+    Layout = "~/Views/Shared/_Layout3.cshtml";
+}
+<body>
+
+    <h2 >User List</h2>
+
+    <table class="table table-striped table-hover">
+
+        <thead>
+            <tr>
+                <th>User Name</th>
+                <th>User Email</th>
+                <th>User Contact Number</th>
+
+            </tr>
+
+        </thead>
+        <tbody>
+
+            @foreach (var us in Model)
+            {
+                <tr>
+                    <td>@us.u_name</td>
+                    <td>@us.u_email</td>
+                    <td> @us.u_contact</td>
+
+                    @*<td>@Html.ActionLink("Details", "Details", new { id = us.u_id })</td>*@
+
+
+
+                </tr>
+            }
+
+
+
+        </tbody>
+
+
+
+
+    </table>
+</body>
